@@ -145,8 +145,9 @@ h2 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
   margin-top: 34px;
+  max-width: 760px;
 }
 
 .primary-action,
@@ -158,6 +159,11 @@ select {
   border: 1px solid var(--line);
   padding: 0 16px;
   font: inherit;
+}
+
+.hero-actions .primary-action,
+.hero-actions .secondary-action {
+  min-width: 118px;
 }
 
 .primary-action,
