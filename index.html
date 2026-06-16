@@ -10,6 +10,7 @@
     <header class="topbar">
       <div class="brand">IoA Multi-Robot</div>
       <nav aria-label="页面导航">
+        <a href="#match">赛项匹配</a>
         <a href="#demo">演示</a>
         <a href="#video">视频</a>
         <a href="#architecture">架构</a>
@@ -23,13 +24,17 @@
         <div class="hero-copy">
           <p class="eyebrow">B-EP1 智能体互联网创新攻关</p>
           <h1>基于 ReAct 的大模型多移动机器人协作系统</h1>
-          <p class="lead">通过多轮对话澄清模糊意图，自动调用工具函数完成任务分解、AGV 分配、无冲突路径规划与闭环重规划。</p>
+          <p class="lead">面向智能体互联网的“人-机-智”协作场景，通过多轮对话澄清模糊意图，自动调用工具函数完成任务分解、AGV 分配、无冲突路径规划与闭环重规划。</p>
           <div class="hero-actions">
             <a class="primary-action" href="#demo">开始演示</a>
-            <a class="secondary-action" href="#architecture">查看技术架构</a>
+            <a class="secondary-action" href="#match">查看赛项匹配</a>
           </div>
         </div>
         <div class="signal-panel" aria-label="项目关键指标">
+          <div>
+            <strong>IoA</strong>
+            <span>智能体互联网应用</span>
+          </div>
           <div>
             <strong>74.8%</strong>
             <span>总体成功率</span>
@@ -41,6 +46,49 @@
           <div>
             <strong>4 台</strong>
             <span>AGV 实机部署</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="match" class="workspace">
+        <div class="section-heading">
+          <p class="eyebrow">Competition Fit</p>
+          <h2>与 B-EP1 指南的逐项匹配</h2>
+          <p class="section-copy">赛项要求完成智能体互联网应用系统的设计、开发与部署，并强调跨域任务协同、多智能体编排、智能体互联、协议接口、GUI 与规范交付。本项目将图书馆多 AGV 配送作为真实痛点，把自然语言意图理解、工具调用和机器人调度连接成可演示闭环。</p>
+        </div>
+
+        <div class="match-grid">
+          <article>
+            <span>赛项背景</span>
+            <h3>智能体成为未来网络“新公民”</h3>
+            <p>页面突出人与大模型智能体、机器人智能体之间的协作，让评委直观看到信息传递之外的任务协同、能力互补与状态反馈。</p>
+          </article>
+          <article>
+            <span>内容方向</span>
+            <h3>跨域分布式任务协同调度</h3>
+            <p>用户意图、图书检索、位置服务、AGV 状态、路径规划和执行反馈跨模块流转，避免“智能孤岛”。</p>
+          </article>
+          <article>
+            <span>技术要求</span>
+            <h3>开源智能体框架与协议接口</h3>
+            <p>采用 ReAct 范式组织推理与行动，工具函数按结构化 JSON 暴露，可对接 LangChain 风格工具链、MCP/A2A 多智能体通信。</p>
+          </article>
+          <article>
+            <span>系统要求</span>
+            <h3>可用 GUI 与在线演示平台</h3>
+            <p>提供任务对话、ReAct 时间线、机器人地图、视频演示、实验指标和交付物入口，满足“直观、交互友好、使用便捷”的 GUI 要求。</p>
+          </article>
+        </div>
+
+        <div class="score-panel" aria-label="赛项评分标准">
+          <div class="score-title">评分标准映射</div>
+          <div class="score-grid">
+            <div><strong>创意</strong><span>真实图书配送痛点 + 智能体互联网落地</span><em>选拔赛 20% / 挑战赛 10%</em></div>
+            <div><strong>方案实现</strong><span>意图澄清、任务拆解、AGV 调度闭环</span><em>选拔赛 20% / 挑战赛 10%</em></div>
+            <div><strong>技术应用</strong><span>LLM、ReAct、多智能体编排、A*、CBS</span><em>30%</em></div>
+            <div><strong>编程开发</strong><span>前端 GUI、工具接口、调度系统与部署</span><em>选拔赛 20% / 挑战赛 25%</em></div>
+            <div><strong>设计</strong><span>架构完整、交互清晰、文档规范</span><em>10%</em></div>
+            <div><strong>效果</strong><span>模拟数据、演示视频、实机部署验证</span><em>挑战赛 15%</em></div>
           </div>
         </div>
       </section>
@@ -115,6 +163,7 @@
         <div class="section-heading">
           <p class="eyebrow">Architecture</p>
           <h2>人-大模型智能体-机器人智能体闭环</h2>
+          <p class="section-copy">围绕指南提出的“标准化智能体间通信接口、外部工具联动、语义任务分发与流转”，系统将用户意图、工具函数、调度算法和机器人执行反馈组织为可追踪链路。</p>
         </div>
         <div class="flow">
           <div>自然语言输入</div>
@@ -131,6 +180,12 @@
           <code>get_robots_state</code>
           <code>calculate_optimal_allocation</code>
           <code>send_agvs_task_workflow</code>
+        </div>
+        <div class="protocol-grid">
+          <div><strong>服务发现</strong><span>按任务能力选择检索、定位、状态查询与调度工具</span></div>
+          <div><strong>语义路由</strong><span>将“找书、配送、改送”等自然语言意图路由到对应智能体能力</span></div>
+          <div><strong>闭环验证</strong><span>机器人状态与执行结果回传，驱动 revise 重规划</span></div>
+          <div><strong>可信协同</strong><span>以结构化调用记录任务来源、参数、执行对象和反馈结果</span></div>
         </div>
       </section>
 
@@ -169,6 +224,20 @@
             <h3>真实机器人验证</h3>
             <p>在图书馆场景中部署 4 台 AGV，展示多机器人协作配送的应用价值。</p>
           </article>
+        </div>
+      </section>
+
+      <section id="deliverables" class="workspace">
+        <div class="section-heading">
+          <p class="eyebrow">Deliverables</p>
+          <h2>面向提交材料的交付物入口</h2>
+          <p class="section-copy">指南要求提交完整设计文档、源代码、系统演示视频或在线演示平台链接。本页面本身作为在线演示平台，同时承载视频、技术架构、效果指标和源码仓库入口。</p>
+        </div>
+        <div class="deliverable-strip">
+          <a href="https://github.com/zddd618/network-" target="_blank" rel="noreferrer">源代码仓库</a>
+          <a href="#video">系统演示视频</a>
+          <a href="#architecture">系统设计方案</a>
+          <a href="#results">运行结果 / 应用效果</a>
         </div>
       </section>
     </main>
