@@ -11,11 +11,11 @@
       <div class="brand">IoA Multi-Robot</div>
       <nav aria-label="页面导航">
         <a href="#match">赛项匹配</a>
-        <a href="#demo">演示</a>
-        <a href="#video">视频</a>
-        <a href="#architecture">架构</a>
-        <a href="#results">效果</a>
-        <a href="#innovation">创新</a>
+        <a href="#system-demo">系统演示</a>
+        <a href="#architecture">系统架构</a>
+        <a href="#results">部署效果</a>
+        <a href="#innovation">创新特色</a>
+        <a href="#deliverables">交付材料</a>
       </nav>
     </header>
 
@@ -26,7 +26,7 @@
           <h1>基于 ReAct 的大模型多移动机器人协作系统</h1>
           <p class="lead">面向智能体互联网的“人-机-智”协作场景，通过多轮对话澄清模糊意图，自动调用工具函数完成任务分解、AGV 分配、无冲突路径规划与闭环重规划。</p>
           <div class="hero-actions">
-            <a class="primary-action" href="#demo">开始演示</a>
+            <a class="primary-action" href="#system-demo">开始演示</a>
             <a class="secondary-action" href="#match">查看赛项匹配</a>
           </div>
         </div>
@@ -93,76 +93,88 @@
         </div>
       </section>
 
-      <section id="demo" class="workspace">
+      <section id="system-demo" class="workspace system-demo-section">
         <div class="section-heading">
-          <p class="eyebrow">Live Demo</p>
-          <h2>从模糊指令到多机器人协作配送</h2>
+          <p class="eyebrow">System Demo</p>
+          <h2>系统演示</h2>
+          <p class="section-copy">将可交互任务推演与真实演示视频放在同一目录下，完整展示“自然语言意图 - ReAct 规划 - 工具调用 - 多机器人调度 - 反馈重规划”的系统能力。</p>
         </div>
 
-        <div class="demo-grid">
-          <section class="panel chat-panel" aria-label="自然语言任务输入">
-            <div class="panel-title">任务对话</div>
-            <div id="chatLog" class="chat-log"></div>
-            <div class="input-row">
-              <select id="scenarioSelect" aria-label="选择演示场景">
-                <option value="clarify">模糊需求澄清</option>
-                <option value="delivery">多目标配送</option>
-                <option value="replan">异常反馈重规划</option>
-              </select>
-              <button id="runDemo" type="button">运行</button>
-            </div>
-          </section>
-
-          <section class="panel" aria-label="ReAct 推理时间线">
-            <div class="panel-title">ReAct 时间线</div>
-            <div id="timeline" class="timeline"></div>
-          </section>
-
-          <section class="panel map-panel" aria-label="机器人状态地图">
-            <div class="panel-title">机器人地图</div>
-            <div class="map">
-              <div class="shelf shelf-a">A 架</div>
-              <div class="shelf shelf-b">B 架</div>
-              <div class="desk desk-1">1 号桌</div>
-              <div class="desk desk-2">2 号桌</div>
-              <div class="robot robot-1">R1</div>
-              <div class="robot robot-2">R2</div>
-              <div class="route route-one"></div>
-              <div class="route route-two"></div>
-            </div>
-            <div id="robotStatus" class="robot-status"></div>
-          </section>
+        <div class="branch-tabs" aria-label="系统演示分支">
+          <a href="#interactive-demo">从模糊指令到多机器人协作配送</a>
+          <a href="#video-demo">演示视频</a>
         </div>
-      </section>
 
-      <section id="video" class="band video-section">
-        <div class="section-heading">
-          <p class="eyebrow">Demo Video</p>
-          <h2>演示视频</h2>
-          <p class="section-copy">展示自然语言任务输入、ReAct 澄清与规划、多机器人协作配送和异常反馈重规划的完整流程。</p>
+        <div id="interactive-demo" class="demo-branch">
+          <div class="branch-heading">
+            <span>分支一</span>
+            <h3>从模糊指令到多机器人协作配送</h3>
+          </div>
+          <div class="demo-grid">
+            <section class="panel chat-panel" aria-label="自然语言任务输入">
+              <div class="panel-title">任务对话</div>
+              <div id="chatLog" class="chat-log"></div>
+              <div class="input-row">
+                <select id="scenarioSelect" aria-label="选择演示场景">
+                  <option value="clarify">模糊需求澄清</option>
+                  <option value="delivery">多目标配送</option>
+                  <option value="replan">异常反馈重规划</option>
+                </select>
+                <button id="runDemo" type="button">运行</button>
+              </div>
+            </section>
+
+            <section class="panel" aria-label="ReAct 推理时间线">
+              <div class="panel-title">ReAct 时间线</div>
+              <div id="timeline" class="timeline"></div>
+            </section>
+
+            <section class="panel map-panel" aria-label="机器人状态地图">
+              <div class="panel-title">机器人地图</div>
+              <div class="map">
+                <div class="shelf shelf-a">A 架</div>
+                <div class="shelf shelf-b">B 架</div>
+                <div class="desk desk-1">1 号桌</div>
+                <div class="desk desk-2">2 号桌</div>
+                <div class="robot robot-1">R1</div>
+                <div class="robot robot-2">R2</div>
+                <div class="route route-one"></div>
+                <div class="route route-two"></div>
+              </div>
+              <div id="robotStatus" class="robot-status"></div>
+            </section>
+          </div>
         </div>
-        <div class="video-grid">
-          <article class="video-shell">
-            <div class="video-title">多机器人协作演示</div>
-            <video controls preload="metadata" poster="assets/hero-grid.svg">
-              <source src="assets/demo-video.mp4" type="video/mp4" />
-              当前浏览器不支持视频播放，请下载演示视频查看。
-            </video>
-          </article>
-          <article class="video-shell">
-            <div class="video-title">调度系统演示</div>
-            <video controls preload="metadata" poster="assets/hero-grid.svg">
-              <source src="assets/dispatch-video.mp4" type="video/mp4" />
-              当前浏览器不支持视频播放，请下载调度系统视频查看。
-            </video>
-          </article>
-          <article class="video-shell">
-            <div class="video-title">实机部署演示</div>
-            <video controls preload="metadata" poster="assets/hero-grid.svg">
-              <source src="assets/real-robot-demo.mp4" type="video/mp4" />
-              当前浏览器不支持视频播放，请下载实机演示视频查看。
-            </video>
-          </article>
+
+        <div id="video-demo" class="demo-branch video-section">
+          <div class="branch-heading">
+            <span>分支二</span>
+            <h3>演示视频</h3>
+            <p>展示自然语言任务输入、ReAct 澄清与规划、多机器人协作配送和异常反馈重规划的完整流程。</p>
+          </div>
+          <div class="video-grid">
+            <article class="video-shell">
+              <div class="video-title">多机器人协作演示</div>
+              <video controls preload="metadata" poster="assets/hero-grid.svg">
+                <source src="assets/demo-video.mp4" type="video/mp4" />
+                当前浏览器不支持视频播放，请下载演示视频查看。
+              </video>
+            </article>
+            <article class="video-shell">
+              <div class="video-title">调度系统演示</div>
+              <video controls preload="metadata" poster="assets/hero-grid.svg">
+                <source src="assets/dispatch-video.mp4" type="video/mp4" />
+                当前浏览器不支持视频播放，请下载调度系统视频查看。
+              </video>
+            </article>
+            <article class="video-shell">
+              <div class="video-title">实机部署演示</div>
+              <video controls preload="metadata" poster="assets/hero-grid.svg">
+                <source src="assets/real-robot-demo.mp4" type="video/mp4" />
+                当前浏览器不支持视频播放，请下载实机演示视频查看。
+              </video>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -241,7 +253,7 @@
         </div>
         <div class="deliverable-strip">
           <a href="https://github.com/zddd618/network-" target="_blank" rel="noreferrer">源代码仓库</a>
-          <a href="#video">系统演示视频</a>
+          <a href="#video-demo">系统演示视频</a>
           <a href="#architecture">系统设计方案</a>
           <a href="#results">运行结果 / 应用效果</a>
         </div>
@@ -251,4 +263,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-
