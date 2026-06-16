@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>多机器人协作智能体互联网展示</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">IoA Multi-Robot</div>
+      <nav aria-label="页面导航">
+        <a href="#demo">演示</a>
+        <a href="#architecture">架构</a>
+        <a href="#results">效果</a>
+        <a href="#innovation">创新</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">B-EP1 智能体互联网创新攻关</p>
+          <h1>基于 ReAct 的大模型多移动机器人协作系统</h1>
+          <p class="lead">通过多轮对话澄清模糊意图，自动调用工具函数完成任务分解、AGV 分配、无冲突路径规划与闭环重规划。</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#demo">开始演示</a>
+            <a class="secondary-action" href="#architecture">查看技术架构</a>
+          </div>
+        </div>
+        <div class="signal-panel" aria-label="项目关键指标">
+          <div>
+            <strong>74.8%</strong>
+            <span>总体成功率</span>
+          </div>
+          <div>
+            <strong>96.1%</strong>
+            <span>多步多函数任务</span>
+          </div>
+          <div>
+            <strong>4 台</strong>
+            <span>AGV 实机部署</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="workspace">
+        <div class="section-heading">
+          <p class="eyebrow">Live Demo</p>
+          <h2>从模糊指令到多机器人协作配送</h2>
+        </div>
+
+        <div class="demo-grid">
+          <section class="panel chat-panel" aria-label="自然语言任务输入">
+            <div class="panel-title">任务对话</div>
+            <div id="chatLog" class="chat-log"></div>
+            <div class="input-row">
+              <select id="scenarioSelect" aria-label="选择演示场景">
+                <option value="clarify">模糊需求澄清</option>
+                <option value="delivery">多目标配送</option>
+                <option value="replan">异常反馈重规划</option>
+              </select>
+              <button id="runDemo" type="button">运行</button>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="ReAct 推理时间线">
+            <div class="panel-title">ReAct 时间线</div>
+            <div id="timeline" class="timeline"></div>
+          </section>
+
+          <section class="panel map-panel" aria-label="机器人状态地图">
+            <div class="panel-title">机器人地图</div>
+            <div class="map">
+              <div class="shelf shelf-a">A 架</div>
+              <div class="shelf shelf-b">B 架</div>
+              <div class="desk desk-1">1 号桌</div>
+              <div class="desk desk-2">2 号桌</div>
+              <div class="robot robot-1">R1</div>
+              <div class="robot robot-2">R2</div>
+              <div class="route route-one"></div>
+              <div class="route route-two"></div>
+            </div>
+            <div id="robotStatus" class="robot-status"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="architecture" class="band">
+        <div class="section-heading">
+          <p class="eyebrow">Architecture</p>
+          <h2>人-大模型智能体-机器人智能体闭环</h2>
+        </div>
+        <div class="flow">
+          <div>自然语言输入</div>
+          <div>ReAct 规划智能体</div>
+          <div>工具函数库</div>
+          <div>A* 代价评估</div>
+          <div>CBS 无冲突规划</div>
+          <div>AGV 执行反馈</div>
+        </div>
+        <div class="function-grid">
+          <code>search_books</code>
+          <code>recommend_similar_books</code>
+          <code>get_target_location</code>
+          <code>get_robots_state</code>
+          <code>calculate_optimal_allocation</code>
+          <code>send_agvs_task_workflow</code>
+        </div>
+      </section>
+
+      <section id="results" class="workspace">
+        <div class="section-heading">
+          <p class="eyebrow">Results</p>
+          <h2>模拟数据与实机部署效果</h2>
+        </div>
+        <div class="result-grid">
+          <div class="metric"><strong>900</strong><span>自建模拟用例</span></div>
+          <div class="metric"><strong>70.0%</strong><span>多工具选择任务</span></div>
+          <div class="metric"><strong>58.3%</strong><span>单函数任务</span></div>
+          <div class="metric"><strong>96.7%</strong><span>无需工具识别</span></div>
+        </div>
+      </section>
+
+      <section id="innovation" class="band">
+        <div class="section-heading">
+          <p class="eyebrow">Innovation</p>
+          <h2>面向评分点的创新特色</h2>
+        </div>
+        <div class="innovation-list">
+          <article>
+            <h3>多轮澄清</h3>
+            <p>面对模糊指令时主动提问，将非专业用户表达转化为可执行任务。</p>
+          </article>
+          <article>
+            <h3>结构化工具调用</h3>
+            <p>用 JSON 函数调用连接检索、推荐、定位、状态查询、任务分配与下发。</p>
+          </article>
+          <article>
+            <h3>闭环重规划</h3>
+            <p>融合用户修改与机器人执行反馈，在异常或需求变化时动态修正计划。</p>
+          </article>
+          <article>
+            <h3>真实机器人验证</h3>
+            <p>在图书馆场景中部署 4 台 AGV，展示多机器人协作配送的应用价值。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
