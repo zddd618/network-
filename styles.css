@@ -143,11 +143,11 @@ h2 {
 }
 
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(118px, 1fr));
   gap: 12px;
   margin-top: 34px;
-  max-width: 760px;
+  max-width: 1180px;
 }
 
 .primary-action,
@@ -163,7 +163,7 @@ select {
 
 .hero-actions .primary-action,
 .hero-actions .secondary-action {
-  min-width: 118px;
+  width: 100%;
 }
 
 .primary-action,
@@ -781,6 +781,7 @@ select option {
 
 @media (max-width: 980px) {
   .hero,
+  .hero-actions,
   .match-grid,
   .score-grid,
   .demo-grid,
