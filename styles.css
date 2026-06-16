@@ -458,14 +458,24 @@ select option {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.video-section .section-heading {
+  max-width: none;
+}
+
+.video-section .section-copy {
+  max-width: none;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  max-width: 1280px;
+  width: 100%;
+  max-width: none;
 }
 
 .video-shell {
+  width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #080b0e;
